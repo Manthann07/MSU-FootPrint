@@ -14,7 +14,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Signup from "./pages/Signup"; 
 import Login from "./pages/Login"; 
 import Error from "./pages/Error";  
-import ImageRecognition from './pages/ImageRecognition';
+import ImageRecognition from './pages/Imagerecognition';
 
 // Layout component with Navbar 
 const NavbarLayout = () => {   
@@ -51,6 +51,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/meal-planner" element={<Mealplanner />} />
               <Route path="/detail" element={<Detail />} />
+              <Route path="/imagerecognition" element={<ImageRecognition />} />
             </Route>
           </Route>
           
