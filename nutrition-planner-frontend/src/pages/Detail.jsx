@@ -9,7 +9,6 @@ const NutritionPlannerDetails = () => {
   const handleMealPlanClick = () => {
     navigate('/meal-planner');
   };
-
   // State management
   const [userDetails, setUserDetails] = useState({
     age: '',
