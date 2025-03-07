@@ -14,25 +14,27 @@ const Navbar = () => {
             {/* Logo */}
             <div className="flex items-center">
               {/* <UtensilsCrossed className="h-2 w-2 text-green-600" /> */}
-              <img src="./logo.png" alt="Your Photo" className="h-15 w-15 rounded-full" mt/>
+              <img src="./logo.png" alt="Your Photo" className="h-15 w-15 rounded-full" />
               <span className="ml-2 text-xl font-bold text-gray-800">
-              NutriVista
+                NutriVista
               </span>
             </div>
-</div>
+          </div>
 
-<div className="hidden md:flex items-center space-x-6">
-  <Link to="/home" className="nav-link">Home</Link>
-  <Link to="/meal-planner" className="nav-link">Meal Plans</Link>
-  <Link to="/dashboard" className="nav-link">Dashboard</Link>
-  <Link to="/aihelper" className="nav-link">AI Assistant</Link>
-  <Link to="/about" className="nav-link">About</Link>
-</div>
+          {/* Center Section: Navbar Links */}
+          <div className="hidden md:flex items-center space-x-6">
+            <Link to="/home" className="nav-link">Home</Link>
+            <Link to="/meal-planner" className="nav-link">Meal Plans</Link>
+            <Link to="/dashboard" className="nav-link">Dashboard</Link>
+            <Link to="/aihelper" className="nav-link">AI Helper</Link>
+            <Link to="/about" className="nav-link">About</Link>
+          </div>
 
           {/* Right Section: Get Started Button */}
           <Link
             to="/get-started"
-            className="get-started-btn bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors duration-200 text-lg">
+            className="get-started-btn bg-green-600 text-white px-8 py-3 rounded-md hover:bg-green-700 transition-colors duration-200 text-lg"
+          >
             Get Started
           </Link>
 
@@ -94,4 +96,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

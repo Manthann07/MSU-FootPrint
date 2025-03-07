@@ -47,12 +47,6 @@ const Footer = () => {
                   Meal Plans
                 </a>
               </li>
-              {/* <li>
-                <a href="#" className="text-green-400 hover:text-green-300 transition-colors duration-200 inline-flex items-center py-1">
-                  <span className="text-sm mr-2">•</span>
-                  Recipes
-                </a>
-              </li> */}
               <li>
                 <a href="about" className="text-green-400 hover:text-green-300 transition-colors duration-200 inline-flex items-center py-1">
                   <span className="text-sm mr-2">•</span>

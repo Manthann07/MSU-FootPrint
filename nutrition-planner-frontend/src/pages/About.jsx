@@ -160,7 +160,7 @@ const About = () => {
                 }`}
                 style={{ transitionDelay: "300ms" }}
               >
-                MealMaster
+                Nutrivista
               </span>
               <span className="absolute -right-4 -top-4 text-green-400 text-6xl opacity-20 animate-bounce">
                 🥗
@@ -199,9 +199,9 @@ const About = () => {
               </h2>
               <div className="space-y-4 font-['Georgia']">
                 {[
-                  "MealMaster began with a simple observation: despite having access to more nutritional information than ever before, people were struggling to consistently plan and prepare healthy meals.",
-                  "Built by a team of nutritionists, chefs, and tech enthusiasts, MealMaster was designed to simplify meal planning, making it intuitive and enjoyable rather than just another task. ",
-                  "Today, MealMaster helps thousands of individuals and families eat better, reduce food waste, and save money through thoughtful meal planning and nutrition guidance.",
+                  "Nutrivista began with a simple observation: despite having access to more nutritional information than ever before, people were struggling to consistently plan and prepare healthy meals.",
+                  "Built by a team of nutritionists, chefs, and tech enthusiasts, Nutrivista was designed to simplify meal planning, making it intuitive and enjoyable rather than just another task. ",
+                  "Today, Nutrivista helps thousands of individuals and families eat better, reduce food waste, and save money through thoughtful meal planning and nutrition guidance.",
                 ].map((paragraph, idx) => (
                   <p
                     key={idx}
@@ -263,7 +263,7 @@ const About = () => {
               }`}
               style={{ transitionDelay: "400ms" }}
             >
-              At MealMaster, our work is guided by these core principles that
+              At Nutrivista, our work is guided by these core principles that
               shape everything we do.
             </p>
           </div>
@@ -345,22 +345,22 @@ const About = () => {
           <div className="grid md:grid-cols-4 gap-7">
             {[
               {
-                name: "shail",
+                name: "Shail",
                 role: "Chief Nutritionist",
                 bio: "MS in Nutrition, specializing in balanced meal planning for busy lifestyles.",
               },
               {
-                name: "tirth",
+                name: "Tirth",
                 role: "Head Chef",
                 bio: "Cul Institute graduate with 15 years of experience creating healthy dishes",
               },
               {
-                name: "mayank",
+                name: "Mayank",
                 role: "Health Advisor",
                 bio: "Board-certified physician focused on preventative health through nutrition.",
               },
               {
-                name: "manthan",
+                name: "Manthan",
                 role: "Tech Lead",
                 bio: "Software engineer passionate about making nutrition technology accessible.",
               },
@@ -378,14 +378,7 @@ const About = () => {
                   }`}
                 >
                   <div className="w-full h-64 bg-gray-200 flex items-center justify-center transform transition-all duration-500 group-hover:scale-105 overflow-hidden">
-                    <img
-                      src={`/${member.name
-                        .toLowerCase()
-                        .split(" ")
-                        .join("")}.jpg`}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src="./admin.jpeg" alt="" />
                   </div>
 
                   <div className="p-4 transform transition-all duration-500">
