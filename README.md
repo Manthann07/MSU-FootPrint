@@ -71,3 +71,5 @@ Feel free to fork the repo, make changes, and submit a pull request.
 ---
 💡**Empowering People with Healthy diet with AI assistant!**
 
+## Video Link :
+https://drive.google.com/drive/folders/10jGYaJ-bBOjfvFeefHy0ui_knxRnI6Xj
