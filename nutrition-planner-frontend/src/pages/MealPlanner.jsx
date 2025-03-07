@@ -16,6 +16,7 @@ const MealPlanner = () => {
   const [expandedMeal, setExpandedMeal] = useState(null);
   const [activeTab, setActiveTab] = useState('all');
   const [expandedNutrient, setExpandedNutrient] = useState(null);
+  const [showGroceryList, setShowGroceryList] = useState(false);
 
   // Initialize form with existing meal plan data if available
   useEffect(() => {
@@ -62,18 +63,18 @@ const MealPlanner = () => {
       }
 
       const data = await response.json();
-      console.log("API Response:", data); // For debugging
+      console.log("API Response:", data);
 
       // Manually assign meal types based on array position
       // The API typically returns meals in order: breakfast, lunch, dinner
       const mealTypes = ['breakfast', 'lunch', 'dinner'];
-      
+
       // Ensure we have three meals with proper types
       const formattedMeals = data.meals.map((meal, index) => {
         // Use the index to determine meal type (0=breakfast, 1=lunch, 2=dinner)
         // If there are more than 3 meals, cycle through the types
         const mealType = mealTypes[index % mealTypes.length];
-        
+
         return {
           id: meal.id,
           title: meal.title,
@@ -313,8 +314,8 @@ const MealPlanner = () => {
             rel="noopener noreferrer"
             className={`mt-2 text-sm font-medium text-white py-2 px-4 rounded-md transition duration-150 ease-in-out text-center ${typeColors[type].button}`}
           >
-            View Full Recipe
-          </a>
+            View Full Recipe</a>
+
         </div>
       </div>
     );
@@ -479,18 +480,6 @@ const MealPlanner = () => {
 
   return (
     <div className="dashboard-wrapper bg-gradient-to-b from-green-50 to-white min-h-screen">
-      <div className="navbar bg-green-600 text-white p-4 flex justify-between items-center">
-        {/* <div className="flex items-center">
-          <Leaf className="h-6 w-6 mr-2" />
-           <h1 className="text-xl font-bold">GreenMeal Planner</h1>
-        </div> */}
-        <div className="flex space-x-4">
-          <Link to="/detail" className="inline-flex items-center px-4 py-2 border border-green-300 text-sm font-medium rounded-md shadow-sm text-green-600 bg-white  hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300 ml-5">
-            {/* <ArrowLeft className="h-4 w-4 mr-1" /> */}
-            BMI CALCULATOR
-          </Link>
-        </div>
-      </div>
 
       <div className="dashboard-container max-w-6xl mx-auto px-4 py-8">
         <header className="mb-10 text-center w-full">
@@ -588,7 +577,9 @@ const MealPlanner = () => {
             </div>
 
             <div className="flex justify-end">
-              
+              <Link to="/detail" className="inline-flex items-center px-4 py-2  mr-3 border border-green-300 text-sm font-medium rounded-md shadow-sm text-green-600 bg-white  hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300 ml-5">
+                BMI CALCULATOR
+              </Link>
               <button
                 type="submit"
                 disabled={loading}
@@ -619,54 +610,50 @@ const MealPlanner = () => {
             <div className="tabs flex space-x-2 mb-6 overflow-x-auto pb-2">
               <button
                 onClick={() => setActiveTab('all')}
-                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${
-                  activeTab === 'all'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-green-700 hover:bg-green-50'
-                } border border-green-200`}
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors ${activeTab === 'all'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-green-700 hover:bg-green-50'
+                  } border border-green-200`}
               >
                 All Meals
               </button>
+
               <button
                 onClick={() => setActiveTab('breakfast')}
-                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${
-                  activeTab === 'breakfast'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-green-700 hover:bg-green-50'
-                } border border-green-200`}
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${activeTab === 'breakfast'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-green-700 hover:bg-green-50'
+                  } border border-green-200`}
               >
                 <Sun className="h-4 w-4 mr-1" />
                 Breakfast
               </button>
               <button
                 onClick={() => setActiveTab('lunch')}
-                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${
-                  activeTab === 'lunch'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-green-700 hover:bg-green-50'
-                } border border-green-200`}
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${activeTab === 'lunch'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-green-700 hover:bg-green-50'
+                  } border border-green-200`}
               >
                 <Sunset className="h-4 w-4 mr-1" />
                 Lunch
               </button>
               <button
                 onClick={() => setActiveTab('dinner')}
-                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${
-                  activeTab === 'dinner'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-green-700 hover:bg-green-50'
-                } border border-green-200`}
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${activeTab === 'dinner'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-green-700 hover:bg-green-50'
+                  } border border-green-200`}
               >
                 <Moon className="h-4 w-4 mr-1" />
                 Dinner
               </button>
               <button
                 onClick={() => setActiveTab('nutrition')}
-                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${
-                  activeTab === 'nutrition'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-green-700 hover:bg-green-50'
-                } border border-green-200`}
+                className={`px-4 py-2 rounded-md font-medium text-sm transition-colors flex items-center ${activeTab === 'nutrition'
+                  ? 'bg-green-600 text-white'
+                  : 'bg-white text-green-700 hover:bg-green-50'
+                  } border border-green-200`}
               >
                 <Info className="h-4 w-4 mr-1" />
                 Nutrition
