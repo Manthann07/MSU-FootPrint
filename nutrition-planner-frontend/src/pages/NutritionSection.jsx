@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const NutritionSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeNutrient, setActiveNutrient] = useState(0);
-  
+
   const nutrients = [
     { name: 'Protein', color: 'bg-red-500', value: 25 },
     { name: 'Carbs', color: 'bg-blue-500', value: 45 },
@@ -11,7 +11,7 @@ const NutritionSection = () => {
     { name: 'Fiber', color: 'bg-green-500', value: 15 },
     { name: 'Vitamins', color: 'bg-purple-500', value: 10 }
   ];
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -21,15 +21,15 @@ const NutritionSection = () => {
       },
       { threshold: 0.1 }
     );
-    
+
     const sectionElement = document.getElementById('nutrition-section');
     if (sectionElement) observer.observe(sectionElement);
-    
+
     // Rotate through nutrients
     const interval = setInterval(() => {
       setActiveNutrient((prev) => (prev + 1) % nutrients.length);
     }, 3000);
-    
+
     return () => {
       if (sectionElement) observer.unobserve(sectionElement);
       clearInterval(interval);
@@ -41,10 +41,10 @@ const NutritionSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Quote */}
-          <div 
+          <div
             className="space-y-6 md:pr-8"
-            style={{ 
-              opacity: isVisible ? 1 : 0, 
+            style={{
+              opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
               transition: 'opacity 0.8s ease-out, transform 0.8s ease-out'
             }}
@@ -52,7 +52,7 @@ const NutritionSection = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
               Nourish Your Body, <span className="text-green-600">Fuel Your Life</span>
             </h2>
-            
+
             <div className="relative pl-6 border-l-4 border-green-500">
               <p className="text-lg text-gray-700 italic">
                 "Let food be thy medicine and medicine be thy food. Proper nutrition isn't just about eating, it's about nourishing your body with what it truly needs."
@@ -60,12 +60,12 @@ const NutritionSection = () => {
               <p className="mt-2 text-gray-600 font-medium">— Hippocrates</p>
             </div>
           </div>
-          
+
           {/* Right side - Animated Nutrition Visualization */}
-          <div 
+          <div
             className="relative h-96"
-            style={{ 
-              opacity: isVisible ? 1 : 0, 
+            style={{
+              opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateX(0)' : 'translateX(30px)',
               transition: 'opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s'
             }}
@@ -78,18 +78,18 @@ const NutritionSection = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Orbiting Nutrient Circles */}
             {nutrients.map((nutrient, index) => {
               const angle = (index * (360 / nutrients.length) + (isVisible ? 0 : 180)) * (Math.PI / 180);
               const radius = 140;
               const x = Math.cos(angle) * radius;
               const y = Math.sin(angle) * radius;
-              
+
               const isActive = activeNutrient === index;
-              
+
               return (
-                <div 
+                <div
                   key={nutrient.name}
                   className={`absolute rounded-full ${nutrient.color} flex items-center justify-center shadow-lg transition-all duration-500`}
                   style={{
@@ -112,10 +112,10 @@ const NutritionSection = () => {
                 </div>
               );
             })}
-            
+
             {/* Animated Connecting Lines */}
-            <svg 
-              className="absolute inset-0 w-full h-full" 
+            <svg
+              className="absolute inset-0 w-full h-full"
               style={{ opacity: isVisible ? 0.5 : 0 }}
             >
               {nutrients.map((nutrient, index) => {
@@ -123,15 +123,15 @@ const NutritionSection = () => {
                 const radius = 140;
                 const x2 = Math.cos(angle) * radius + 192;
                 const y2 = Math.sin(angle) * radius + 192;
-                
+
                 return (
-                  <line 
+                  <line
                     key={`line-${nutrient.name}`}
-                    x1="192" 
-                    y1="192" 
-                    x2={x2} 
-                    y2={y2} 
-                    stroke="#d1d5db" 
+                    x1="192"
+                    y1="192"
+                    x2={x2}
+                    y2={y2}
+                    stroke="#d1d5db"
                     strokeWidth="1"
                     strokeDasharray="3,3"
                   />
@@ -141,7 +141,7 @@ const NutritionSection = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Animation keyframes */}
       <style jsx>{`
         @keyframes float {
