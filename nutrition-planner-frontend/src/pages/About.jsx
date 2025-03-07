@@ -225,9 +225,7 @@ const About = () => {
               <div className="rounded-3xl shadow-lg bg-gray-200 h-64 flex items-center justify-center overflow-hidden">
                 <div
                   className={`text-gray-600 transform transition-all duration-700 ${
-                    isVisible.story
-                      ? "scale-100 rotate-0"
-                      : "scale-0 rotate-180"
+                    isVisible.story ? "opacity-100" : "opacity-0"
                   }`}
                   style={{ transitionDelay: "800ms" }}
                 >
@@ -466,15 +464,13 @@ const About = () => {
               }`}
               style={{ transitionDelay: "600ms" }}
             >
-              
-                <Link
-                  to="/meal-planner"
-                  className="relative z-10 border border-green-500 text-green-500 px-4 py-2 rounded-md hover:bg-green-100 transition duration-300 flex items-center justify-center"
-                >
-                  Generate Your Meal
-                </Link>
-                <span className="absolute top-0 left-0 right-0 bottom-0 bg-green-200 opacity-0 group-hover:opacity-50 transform scale-0 group-hover:scale-100 rounded-full transition-all duration-500 z-0"></span>
-             
+              <Link
+                to="/meal-planner"
+                className="relative z-10 border border-green-500 text-green-500 px-4 py-2 rounded-md hover:bg-green-100 transition duration-300 flex items-center justify-center"
+              >
+                Generate Your Meal
+              </Link>
+              <span className="absolute top-0 left-0 right-0 bottom-0 bg-green-200 opacity-0 group-hover:opacity-50 transform scale-0 group-hover:scale-100 rounded-full transition-all duration-500 z-0"></span>
             </div>
           </div>
         </div>

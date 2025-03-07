@@ -487,7 +487,7 @@ const NutritionHelper = () => {
                         transition={{ delay: 0.5 }}
                       >
                         <h4 className="font-medium text-green-800 mb-2">Popular Topics:</h4>
-                        <div className="flex flex-wrap gap-2 justify-center">
+                         <div className="flex flex-wrap gap-2 justify-center">
                           {["Protein sources", "Keto diet", "Weight management", "Vitamins", "Meal planning"].map((topic, i) => (
                             <motion.button
                               key={i}
@@ -499,7 +499,7 @@ const NutritionHelper = () => {
                               {topic}
                             </motion.button>
                           ))}
-                        </div>
+                        </div> 
                       </motion.div>
                     </motion.div>
                   ) : (
@@ -672,3 +672,5 @@ const NutritionHelper = () => {
 };
 
 export default NutritionHelper;
+
+

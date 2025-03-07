@@ -1,4 +1,6 @@
-# 🌟 Meal Planner Platform
+## Team Number : 32
+
+# 🌟 Meal Planner Platform 
 
 ## 📌 Overview
 In today’s rapidly evolving digital world, many people struggle to manage their health and nutrition effectively. Our platform automatically generates healthy, nutritious meal plans tailored to individual calorie needs. It also includes an AI-powered assistant to provide personalized meal recommendations and detailed nutritional information.
@@ -65,10 +67,6 @@ Server will run at `http://localhost:7000`
 We welcome contributions! 🎉
 **If you’d like to contribute:**
 Feel free to fork the repo, make changes, and submit a pull request.
-
-
-## 📜 License
-This project is licensed under the MIT License.
 
 ---
 💡**Empowering People with Healthy diet with AI assistant!**
