@@ -485,9 +485,9 @@ const MealPlanner = () => {
            <h1 className="text-xl font-bold">GreenMeal Planner</h1>
         </div> */}
         <div className="flex space-x-4">
-          <Link to="/detail" className="inline-flex items-center px-4 py-2 border border-green-300 text-sm font-medium rounded-md shadow-sm text-green-600 bg-white  hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300 ml-5">
+          <Link to="/imagerecognition" className="inline-flex items-center px-4 py-2 border border-green-300 text-sm font-medium rounded-md shadow-sm text-green-600 bg-white  hover:border-green-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400 transition duration-300 ml-5">
             {/* <ArrowLeft className="h-4 w-4 mr-1" /> */}
-            BMI CALCULATOR
+            Image Recognization
           </Link>
         </div>
       </div>
